@@ -1,4 +1,4 @@
-![alt rank](https://www.codewars.com/users/inlag333/badges/large)
+![alt rank](https://www.codewars.com/users/inlag333/badges/small)
 
 ###### Codewarriors are strongly encouraged not to look at my solutions to Kata until you have completed it yourselves or at least took the time to think about your own approaches
 
