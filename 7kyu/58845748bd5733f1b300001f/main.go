@@ -2,11 +2,13 @@ package main
 
 import (
 	"fmt"
+	"math/bits"
 	"strconv"
 )
 
 func main() {
 	fmt.Println(RangeBitCount(2, 7))
+	bits.OnesCount16(x uint16)
 }
 
 func RangeBitCount(a, b int) (res int) {
