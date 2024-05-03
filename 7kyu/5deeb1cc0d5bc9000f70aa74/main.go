@@ -9,24 +9,20 @@ func main() {
 }
 
 func Zombie_shootout(zombies, initial_range, ammo int) string {
-	var distance = float64(initial_range) / 0.5
-
-	if initial_range >= ammo && ammo > zombies {
+	if initial_range*2 >= ammo && ammo >= zombies ||
+		initial_range*2 <= ammo && ammo > zombies && initial_range*2 >= zombies {
 		return fmt.Sprintf("You shot all %d zombies.", zombies)
 	}
-	if initial_range < zombies && ammo > zombies {
-		return fmt.Sprintf("You shot %d zombies before being eaten: overwhelmed.", zombies)
-	}
-	if ammo < zombies {
-		return fmt.Sprintf("You shot %d zombies before being eaten: ran out of ammo.", zombies)
-	}
-	return fmt.Sprintf("You shot %d zombies before being eaten: overwhelmed.", zombies)
 
-	// for distance > 0 {
-	// 	zombies--
-	// 	ammo--
-	// 	distance -= 0.5
-	// }
+	if initial_range*2 < zombies && initial_range*2 < ammo || initial_range*2 == ammo {
+		return fmt.Sprintf("You shot %d zombies before being eaten: overwhelmed.", initial_range*2)
+	}
+
+	if initial_range*2 < zombies && ammo < zombies || ammo < zombies {
+		return fmt.Sprintf("You shot %d zombies before being eaten: ran out of ammo.", ammo)
+	}
+
+	return fmt.Sprintf("You shot %d zombies before being eaten: overwhelmed.", ammo)
 }
 
 // https://www.codewars.com/kata/5deeb1cc0d5bc9000f70aa74
